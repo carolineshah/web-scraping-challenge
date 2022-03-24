@@ -36,6 +36,7 @@ def scrape():
     browser.visit(url)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
+    # create list of dictionaries for url and img info
     hemisphere_image_urls = []
     image_infos = soup.find_all('div', class_='item')
     for image in image_infos:
