@@ -38,9 +38,9 @@
             </div>
             <!-- Mars Facts Table -->
             <div class="col-lg-4">
-                <div class="table">
-                    <h2>Mars Facts</h2>
-                    <p>{{ mars.mars_html | safe }}</p>
+                <div class="table" style="text-align: center">
+                    <h2>Mars Facts</h2><hr/>
+                    {{ mars.mars_html | safe }}
                 </div>
             </div>
         </div>
@@ -49,22 +49,22 @@
             <!-- Hemisphere Photos -->
             <div class="col-md-12">
                 <h2>Mars Hemispheres</h2><hr/>
-                <figure>
+                <figure style="display: inline-block; border: grey solid 2px; padding: 4px; text-align: center;">
                     <img src="{{ mars.hemisphere_list_dict[0]['img_url'] }}" alt="{{ mars.hemisphere_list_dict[0]['title'] }}" 
                         height="200px" width="200px">
-                    <figcaption>{{ mars.hemisphere_list_dict[0]['title'] }}</figcaption>
+                    <figcaption><strong>{{ mars.hemisphere_list_dict[0]['title'] }}</strong></figcaption>
                 </figure>
-                <figure>
+                <figure style="display: inline-block; border: grey solid 2px; padding: 4px; text-align: center;">
                     <img src="{{ mars.hemisphere_list_dict[1]['img_url'] }}" alt="{{ mars.hemisphere_list_dict[1]['title'] }}" height="200px" width="200px">
-                    <figcaption>{{ mars.hemisphere_list_dict[1]['title'] }}</figcaption>
+                    <figcaption><strong>{{ mars.hemisphere_list_dict[1]['title'] }}</strong></figcaption>
                 </figure>    
-                <figure>
+                <figure style="display: inline-block; border: grey solid 2px; padding: 4px; text-align: center;">
                     <img src="{{ mars.hemisphere_list_dict[2]['img_url'] }}" alt="{{ mars.hemisphere_list_dict[2]['title'] }}" height="200px" width="200px">
-                    <figcaption>{{ mars.hemisphere_list_dict[2]['title'] }}</figcaption>
+                    <figcaption><strong>{{ mars.hemisphere_list_dict[2]['title'] }}</strong></figcaption>
                 </figure>
-                <figure>
+                <figure style="display: inline-block; border: grey solid 2px; padding: 4px; text-align: center;">
                     <img src="{{ mars.hemisphere_list_dict[3]['img_url'] }}" alt="{{ mars.hemisphere_list_dict[3]['title'] }}" height="200px" width="200px">
-                    <figcaption>{{ mars.hemisphere_list_dict[3]['title'] }}</figcaption>
+                    <figcaption><strong>{{ mars.hemisphere_list_dict[3]['title'] }}</strong></figcaption>
                 </figure>
             </div>
         </div>

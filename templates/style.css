@@ -1,3 +1,8 @@
+/* this file isn't being recognized for some reason */
 .figure {
     display: inline-block;
+}
+
+tr {
+    text-align: center;
 }
