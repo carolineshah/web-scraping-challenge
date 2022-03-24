@@ -11,18 +11,48 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="col-12">
-      <h1>Visit...</h1>
-      <p>Mars</p>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        </div>
     </div>
-    <img src="{{ vacation.sloth_img }}" alt="Sloth">
-    <h2>The typical weather in Mars is:</h2>
-    <h3>Max Temp: {{ mars }}</h3>
+    <div class="container">
+        <div class="row">
+            <!-- Mars News -->
+            <div class="col-12">
+                <h2>Latest Mars News</h2><hr/>
+                <h4>{{ mars.news_title }}</h4>
+                <p>{{ mars.news_paragraph }}</p>
+                <p>{{ mars }}</p>
+            </div>
+        </div>
 
-  </div>
-  </div>
+        <div class="row">
+            <!-- Featured Image -->
+            <div class="col-lg-8">
+                <h2>Featured Mars Image</h2><hr/>
+                <img src="{{ mars.featured_image_url }}" alt="Featured Image">
+            </div>
+            <!-- Mars Facts Table -->
+            <div class="col-lg-4">
+                <div class="table">
+                    <h2>Mars Facts</h2>
+                    <p>{{ mars.mars_html | safe }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Hemisphere Photos -->
+            <div class="col-md-12">
+                <figure>
+                    <img src="{{ mars.hemisphere_list_dict[0]['img_url'] }}" alt="{{ mars.hemisphere_list_dict[0]['title'] }}">
+                    <figcaption>{{ mars.hemisphere_list_dict[0]['title'] }}</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>        
 </body>
 
 </html>
