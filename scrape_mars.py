@@ -14,8 +14,16 @@ def scrape():
     browser.visit(url)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
-    news_title = soup.find('div', class_='content_title').text
-    news_p = soup.find('div', class_='article_teaser_body').text
+    news_title_location = soup.find('div', class_='content_title')
+    if news_title_location is not None:
+        news_title = news_title_location.text
+    else:
+        news_title = None
+    news_p_location = soup.find('div', class_='article_teaser_body')
+    if news_p_location is not None:
+        news_p = news_p_location.text
+    else:
+        news_p = None
 
     # visit featured space image site
     url = 'https://spaceimages-mars.com/'
